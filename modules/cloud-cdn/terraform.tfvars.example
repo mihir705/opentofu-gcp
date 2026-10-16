@@ -1,0 +1,9 @@
+project_id  = "my-gcp-project"
+name        = "app"
+bucket_name = "my-gcp-project-app-static"
+
+enable_cdn = true
+
+labels = {
+  env = "dev"
+}

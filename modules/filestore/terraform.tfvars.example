@@ -1,0 +1,10 @@
+project_id  = "my-gcp-project"
+name        = "app-files"
+location    = "us-central1-a"
+tier        = "STANDARD"
+capacity_gb = 1024
+network     = "app-vpc"
+
+labels = {
+  env = "dev"
+}

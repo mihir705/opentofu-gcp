@@ -1,0 +1,8 @@
+cloud_storage_buckets = {
+  app-data = {
+    project_key        = "app"
+    name               = "mycompany-app-data-prod"
+    location           = "US"
+    versioning_enabled = true
+  }
+}

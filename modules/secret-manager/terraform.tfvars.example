@@ -1,0 +1,7 @@
+secret_manager_secrets = {
+  app-config = {
+    project_key = "app"
+    secret_id   = "app-config"
+    generate_random_password = { length = 32 }
+  }
+}

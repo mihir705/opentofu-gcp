@@ -1,0 +1,8 @@
+project_id    = "my-gcp-project"
+location      = "us-central1"
+repository_id = "app-images"
+format        = "DOCKER"
+
+labels = {
+  env = "dev"
+}

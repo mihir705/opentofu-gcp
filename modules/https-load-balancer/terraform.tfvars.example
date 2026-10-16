@@ -1,0 +1,15 @@
+project_id = "my-gcp-project"
+name       = "app-https"
+region     = "us-central1"
+
+domains = ["app.example.com"]
+
+backend_port = 80
+
+backend_instance_groups = [
+  "projects/my-gcp-project/regions/us-central1/instanceGroups/app-ig",
+]
+
+labels = {
+  env = "dev"
+}

@@ -1,0 +1,9 @@
+project_id = "my-gcp-project"
+name       = "app-events-sub"
+topic_name = "app-events"
+
+ack_deadline_seconds = 20
+
+labels = {
+  env = "dev"
+}

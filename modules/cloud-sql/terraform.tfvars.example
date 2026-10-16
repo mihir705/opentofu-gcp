@@ -1,0 +1,15 @@
+project_id       = "my-gcp-project"
+name             = "app-db"
+region           = "us-central1"
+tier             = "db-f1-micro"
+database_version = "POSTGRES_15"
+disk_size        = 10
+database_name    = "app"
+
+generate_password = {
+  length = 20
+}
+
+labels = {
+  env = "dev"
+}

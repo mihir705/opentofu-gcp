@@ -1,0 +1,17 @@
+project_id       = "my-gcp-project"
+name             = "app-vm-1"
+zone             = "us-central1-a"
+machine_type     = "e2-medium"
+subnet_self_link = "projects/my-gcp-project/regions/us-central1/subnetworks/app-public-a"
+
+network_tags     = ["app-public"]
+create_public_ip = false
+
+boot_disk = {
+  size_gb = 20
+  type    = "pd-balanced"
+}
+
+labels = {
+  env = "dev"
+}

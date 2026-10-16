@@ -1,0 +1,8 @@
+project_id = "my-gcp-project"
+name       = "app-events"
+
+message_retention_duration = "86400s"
+
+labels = {
+  env = "dev"
+}

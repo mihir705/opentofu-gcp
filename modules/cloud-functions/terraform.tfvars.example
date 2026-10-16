@@ -1,0 +1,11 @@
+project_id    = "my-gcp-project"
+name          = "app-handler"
+location      = "us-central1"
+runtime       = "python312"
+entry_point   = "main"
+source_dir    = "./function"
+source_bucket = "my-gcp-project-functions"
+
+labels = {
+  env = "dev"
+}

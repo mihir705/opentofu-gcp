@@ -1,0 +1,12 @@
+project_id   = "my-gcp-project"
+account_id   = "app-runner"
+display_name = "Application Runner"
+
+roles = [
+  "roles/logging.logWriter",
+  "roles/monitoring.metricWriter",
+]
+
+labels = {
+  env = "dev"
+}

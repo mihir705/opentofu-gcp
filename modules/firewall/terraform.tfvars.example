@@ -1,0 +1,16 @@
+project_id = "my-gcp-project"
+name       = "app"
+network    = "projects/my-gcp-project/global/networks/app-vpc"
+
+target_tags = ["app-public"]
+
+ingress_rules = {
+  http = {
+    allow = [{ protocol = "tcp", ports = ["80", "443"] }]
+    source_ranges = ["0.0.0.0/0"]
+  }
+}
+
+labels = {
+  env = "dev"
+}

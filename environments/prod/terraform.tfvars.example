@@ -1,0 +1,104 @@
+# Copy this file to terraform.tfvars and update values for your environment.
+# cp terraform.tfvars.example terraform.tfvars
+#
+# Module-specific examples (copy blocks from these into this file):
+# modules/project-services/terraform.tfvars.example
+# modules/cloud-storage/terraform.tfvars.example
+# modules/secret-manager/terraform.tfvars.example
+# modules/kms/terraform.tfvars.example
+# modules/vpc/terraform.tfvars.example
+# modules/firewall/terraform.tfvars.example
+# modules/load-balancer/terraform.tfvars.example
+# modules/https-load-balancer/terraform.tfvars.example
+# modules/cloud-functions/terraform.tfvars.example
+# modules/cloud-cdn/terraform.tfvars.example
+# modules/artifact-registry/terraform.tfvars.example
+# modules/iam/terraform.tfvars.example
+# modules/compute-instance/terraform.tfvars.example
+# modules/cloud-sql/terraform.tfvars.example
+# modules/api-gateway/terraform.tfvars.example
+# modules/pubsub-topic/terraform.tfvars.example
+# modules/pubsub-subscription/terraform.tfvars.example
+# modules/gke/terraform.tfvars.example
+# modules/cloud-run/terraform.tfvars.example
+# modules/filestore/terraform.tfvars.example
+#
+# Prefer project_key over project_id when using environments/prod.
+# Omit any block you do not need. No empty {} required.
+
+gcp_project_id = "my-gcp-project-id"
+gcp_region     = "us-central1"
+gcp_replica_region = "us-east1"
+
+default_labels = {
+  environment = "prod"
+  managed_by  = "opentofu"
+  project     = "opentofu-gcp"
+}
+
+# --- Project services (see modules/project-services/terraform.tfvars.example) ---
+projects = {
+  app = {
+    project_id = "my-gcp-project-id"
+    services = [
+      "compute.googleapis.com",
+      "storage.googleapis.com",
+      "secretmanager.googleapis.com",
+      "cloudkms.googleapis.com",
+      "run.googleapis.com",
+      "cloudfunctions.googleapis.com",
+      "artifactregistry.googleapis.com",
+      "sqladmin.googleapis.com",
+      "container.googleapis.com",
+      "pubsub.googleapis.com",
+      "apigateway.googleapis.com",
+      "file.googleapis.com",
+    ]
+  }
+}
+
+# --- Cloud Storage (see modules/cloud-storage/terraform.tfvars.example) ---
+cloud_storage_buckets = {
+  app-data = {
+    project_key        = "app"
+    name               = "mycompany-app-data-prod"
+    location           = "US"
+    versioning_enabled = true
+
+    labels = {
+      purpose = "application-data"
+    }
+  }
+}
+
+# --- Secret Manager (see modules/secret-manager/terraform.tfvars.example) ---
+# secret_manager_secrets = {
+#   app-config = {
+#     project_key = "app"
+#     secret_id   = "app-config"
+#     generate_random_password = {
+#       length = 32
+#     }
+#   }
+# }
+
+# --- VPC (see modules/vpc/terraform.tfvars.example) ---
+# vpcs = {
+#   main = {
+#     name        = "vpc-mycompany-prod"
+#     project_key = "app"
+#     region      = "us-central1"
+#
+#     public_subnets = {
+#       us-central1-a = { region = "us-central1", ip_cidr_range = "10.0.1.0/24" }
+#       us-central1-b = { region = "us-central1", ip_cidr_range = "10.0.2.0/24" }
+#     }
+#
+#     private_subnets = {
+#       us-central1-a = { region = "us-central1", ip_cidr_range = "10.0.11.0/24" }
+#       us-central1-b = { region = "us-central1", ip_cidr_range = "10.0.12.0/24" }
+#     }
+#
+#     labels = { Purpose = "main-network" }
+#   }
+# }

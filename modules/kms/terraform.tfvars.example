@@ -1,0 +1,8 @@
+kms_keys = {
+  app = {
+    project_key     = "app"
+    location        = "us-central1"
+    key_ring_name   = "mycompany-prod"
+    crypto_key_name = "app-data"
+  }
+}

@@ -1,0 +1,18 @@
+project_id  = "my-gcp-project"
+name        = "app-cluster"
+location    = "us-central1"
+region      = "us-central1"
+network     = "app-vpc"
+subnetwork  = "app-vpc-private-a"
+
+initial_node_count = 1
+
+node_pool = {
+  name         = "default-pool"
+  node_count   = 2
+  machine_type = "e2-medium"
+}
+
+labels = {
+  env = "dev"
+}

@@ -1,0 +1,14 @@
+project_id = "my-gcp-project"
+name       = "app-api"
+location   = "us-central1"
+image      = "us-docker.pkg.dev/my-gcp-project/app/app:latest"
+
+env = {
+  ENV = "dev"
+}
+
+ingress = "INGRESS_TRAFFIC_ALL"
+
+labels = {
+  env = "dev"
+}

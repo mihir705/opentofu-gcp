@@ -1,0 +1,16 @@
+project_id = "my-gcp-project"
+name       = "app-lb"
+region     = "us-central1"
+network    = "projects/my-gcp-project/global/networks/app-vpc"
+subnet     = "projects/my-gcp-project/regions/us-central1/subnetworks/app-public-a"
+
+protocol = "TCP"
+port     = 80
+
+backend_instances = [
+  "projects/my-gcp-project/zones/us-central1-a/instances/app-vm-1",
+]
+
+labels = {
+  env = "dev"
+}

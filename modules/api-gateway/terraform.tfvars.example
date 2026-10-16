@@ -1,0 +1,10 @@
+project_id = "my-gcp-project"
+api_id     = "app-api"
+gateway_id = "app-gateway"
+region     = "us-central1"
+
+# openapi_spec = file("${path.module}/openapi.yaml")
+
+labels = {
+  env = "dev"
+}

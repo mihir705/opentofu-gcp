@@ -1,0 +1,10 @@
+projects = {
+  app = {
+    project_id = "my-gcp-project-id"
+    services = [
+      "compute.googleapis.com",
+      "storage.googleapis.com",
+      "secretmanager.googleapis.com",
+    ]
+  }
+}
